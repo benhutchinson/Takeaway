@@ -17,3 +17,5 @@ This was the second of our weekend tasks at Makers Academy.  The aim here is to 
 - This will allow us to begin to use Ruby Gems.
 - In this case, we will use Twilio for text messaging
 - The twilio-ruby gem is the one used to access the API
+- We use environmental variables to call and store sensitive information
+- We use Bundler and a Gemfile for the first time
