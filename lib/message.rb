@@ -11,13 +11,17 @@ require 'twilio-ruby'
 
 class TextMessage
 
-account_sid = ENV['MY_TWILIO_USER']
-auth_token = ENV['MY_TWILIO_AUTH']
-@client = Twilio::REST::Client.new account_sid, auth_token
-expected_time = DeliveryTime.new.expected_delivery
+def initialize
+  account_sid = ENV['MY_TWILIO_USER']
+  auth_token = ENV['MY_TWILIO_AUTH']
+  @client = Twilio::REST::Client.new account_sid, auth_token
+  @expected_time = DeliveryTime.new.expected_delivery
+end
 
-message = @client.account.messages.create(:body => "Thank you. Your order was placed and will be delivered before #{expected_time}",
+def send_text
+  @message = @client.account.messages.create(:body => "Thank you. Your order was placed and will be delivered before #{@expected_time}",
     :from => ENV['MY_TWILIO_NUMBER'],
     :to => ENV['MY_MOBILE'])
+end
 
 end
