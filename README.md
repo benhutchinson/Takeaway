@@ -19,3 +19,4 @@ This was the second of our weekend tasks at Makers Academy.  The aim here is to 
 - The twilio-ruby gem is the one used to access the API
 - We use environmental variables to call and store sensitive information
 - We use Bundler and a Gemfile for the first time
+- Doubles will be used so that texts aren't sent every time tests are run
