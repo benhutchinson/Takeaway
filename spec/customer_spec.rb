@@ -2,7 +2,7 @@ require 'customer'
 
 describe 'Customer' do 
 
-  let(:customer) { Customer.new }
+  let(:customer) { Customer.new(100000) }
   let(:vindaloo) { double :dish}
 
   it "should be able to choose dishes (default quantity of 1)" do 

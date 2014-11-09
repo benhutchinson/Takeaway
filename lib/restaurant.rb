@@ -6,6 +6,7 @@ attr_reader :name
 def initialize(name)
   @name = name
   @menu_list = []
+  # @order_to_fill = []
 end
 
 def has_menu?

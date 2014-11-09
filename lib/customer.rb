@@ -2,10 +2,12 @@ class Customer
 
   attr_accessor :dishes_to_order
   attr_accessor :finished_choosing
+  attr_accessor :funds_in_account
 
-  def initialize
+  def initialize(funds)
     @dishes_to_order = {}
     @finished_choosing = false
+    @funds_in_account = funds 
   end
 
   def choose_dishes(dish, quantity = 1)
