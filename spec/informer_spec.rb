@@ -16,16 +16,25 @@ let(:text) { double :TextMessage, :send_text => true }
       # restaurant > has_order? perhaps
   # end  
 
-  # worth writing out order of things in README
+
   # ie customer chooses restaurant
   # selects dishes
+  
+
+  # build the control
   # when finished, check they have funds
   # restaurant notified of order
   # restaurant getes order
   # customer get sent a text
+
+
   # errors > dish does not exist
   # errors > dish not at that restaurant
   # errors > restaurant does not exist
+  
+
   # what did they mean by the listing stuff?
+  # anything that could be in a module?  struct?
+  # check the expected delivery time in the morning works
 
 end

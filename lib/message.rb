@@ -1,12 +1,3 @@
-# I have built this to offer flexibility
-# in how long the wait for delivery is.
-# The expected_delivery variable is controlled 
-# separately in the DeliveryTime class.
-# This aims to reflect SOLID principles.
-# i.e. TextMessage is ceding control of DeliveryTime
-# I see this as consistent with Dependency Inversion
-# TextMessage depends on an abstraction
-
 require 'twilio-ruby'
 
 class TextMessage
@@ -25,3 +16,12 @@ def send_text
 end
 
 end
+
+# I have built this to offer flexibility
+# in how long the wait for delivery is.
+# The expected_delivery variable is controlled 
+# separately in the DeliveryTime class.
+# This aims to reflect SOLID principles.
+# i.e. TextMessage is ceding control of DeliveryTime
+# I see this as consistent with Dependency Inversion
+# TextMessage depends on an abstraction

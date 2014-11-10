@@ -11,7 +11,9 @@ def initialize
 end
 
 def one_hour_from_now
-  (current_time.hour + 1).to_s + ":" + current_time.strftime("%M")
+  hour = current_time.strftime("%H")
+  hour_plus_one = hour.to_i + 1
+  hour_plus_one.to_s + ":" + current_time.strftime("%M")
 end
 
 end

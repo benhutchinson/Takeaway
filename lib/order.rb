@@ -2,10 +2,13 @@ class OrderAggregator
 
   attr_accessor :total_price
   attr_accessor :price_quantity_array
+  attr_accessor :restaurant
+  attr_accessor :dishes_to_fulfil
   
   def initialize
     @total_price
-    # @dishes_to_fulfill = customer.dishes_to_order.keys
+    @restaurant
+    @dishes_to_fulfil = []
   end
 
   def create_a_price_quantity_array(customer)
@@ -20,8 +23,12 @@ class OrderAggregator
     raise InsufficientFunds if total_price > customer.funds_in_account
   end
 
-  # def populate_dishes_to_fulfil(customer)
-    # populate that array above
-    # restaurant can then call it    
+  def which_restaurant_is_order_for(customer)
+    @restaurant = customer.order_restaurant
+  end
+
+  def what_dishes_to_fulfil(customer)
+    @dishes_to_fulfil << customer.dishes_to_order
+  end
 
 end

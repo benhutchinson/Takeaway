@@ -13,6 +13,14 @@ This was the second of our weekend tasks at Makers Academy.  The aim here is to 
 * When the Takeaway class is loaded in IRB and an order is placed, the text should actually be sent
 * We are using our personal phone numbers for this and do not need to model the customer's mobile phone number
 
+###Logic Of Program
+- A customer will first choose a restaurant
+- It will then select the dishes
+- When finished choosing, the order will be aggregated
+- A "fund check" on the consumer will be performed
+- The restaurant will be notified of the order
+- The customer will be sent a text, guiding them to expect delivery in one hour
+
 ###New Technologies
 - This will allow us to begin to use Ruby Gems.
 - In this case, we will use Twilio for text messaging
