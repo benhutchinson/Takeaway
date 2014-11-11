@@ -11,9 +11,12 @@ def initialize
 end
 
 def one_hour_from_now
-  hour = current_time.strftime("%H")
-  hour_plus_one = hour.to_i + 1
-  hour_plus_one.to_s + ":" + current_time.strftime("%M")
+  hour_plus_one = current_time.strftime("%H").to_i + 1
+  if hour_plus_one < 10
+    "0" + hour_plus_one.to_s + ":" + current_time.strftime("%M")
+  else
+    hour_plus_one.to_s + ":" + current_time.strftime("%M")
+  end
 end
 
 end

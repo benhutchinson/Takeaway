@@ -13,10 +13,12 @@ class Customer
   end
 
   def choose_restaurant(restaurant)
+    raise RestaurantNotSignedUp unless restaurant.signed_up_to_platform
     @order_restaurant = restaurant
   end
 
-  def choose_dishes(dish, quantity = 1)
+  def choose_dishes(dish, restaurant, quantity = 1)
+    raise DishNotOnMenu unless dish.on_the_menu(restaurant, dish)
     dishes_to_order[dish] = quantity.to_i
   end
 

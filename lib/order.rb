@@ -5,7 +5,8 @@ class OrderAggregator
   attr_accessor :restaurant
   attr_accessor :dishes_to_fulfil
   
-  def initialize
+  def initialize(customer)
+    @customer = customer
     @total_price
     @restaurant
     @dishes_to_fulfil = []
@@ -16,11 +17,12 @@ class OrderAggregator
   end  
 
   def create_the_basket_total(customer)
-    total_price = @price_quantity_array.inject{ |sum, x| sum + x }
+    @total_price = @price_quantity_array.inject{ |sum, x| sum + x }
   end
 
   def can_customer_afford?(customer)
-    raise InsufficientFunds if total_price > customer.funds_in_account
+    raise InsufficientFunds if total_price.to_i > customer.funds_in_account.to_i
+    true
   end
 
   def which_restaurant_is_order_for(customer)

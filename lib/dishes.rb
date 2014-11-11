@@ -8,4 +8,8 @@ def initialize(name, price)
   @price = price
 end
 
+def on_the_menu(restaurant, dish)
+  restaurant.menu.include?(dish)
+end
+
 end

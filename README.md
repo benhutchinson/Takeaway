@@ -21,6 +21,13 @@ This was the second of our weekend tasks at Makers Academy.  The aim here is to 
 - The restaurant will be notified of the order
 - The customer will be sent a text, guiding them to expect delivery in one hour
 
+###Areas For Extension/Improvement
+- A Menu class could be introduced.  This would allow a restaurant to maintain multiple menus improving the potential for extension, consistent with the Open/Closed Principle from the SOLID set of principles.  It would also add a layer between the dishes and the customer/restaurant potentially and could serve as a kind of adapter.
+- Bespoke notification towards customer with their own personal phone number, etc.
+- A centralised "Member" class could be introduced that holds all the restaurants that are signed up on the system.
+- Customer can currently re-enter order with new quantities, rather than supplement their order.  
+- Customer cannot currently delete their order.
+
 ###New Technologies
 - This will allow us to begin to use Ruby Gems.
 - In this case, we will use Twilio for text messaging
