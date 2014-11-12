@@ -2,10 +2,10 @@ require 'restaurant'
 
 describe 'Restaurant' do 
 
-  let(:english_raj) { Restaurant.new("English Raj") }
-  let(:tikka) { double :dish }
-  let(:order) { double :order, :dishes_to_fulfil => :vindaloo}
-  let(:vindaloo) { double :dish }
+  let (:english_raj) { Restaurant.new("English Raj") }
+  let (:tikka) { double :dish }
+  let (:order) { double :order, :dishes_to_fulfil => :vindaloo}
+  let (:vindaloo) { double :dish }
 
   it 'should have a name' do 
     expect(english_raj.name).to eq "English Raj"

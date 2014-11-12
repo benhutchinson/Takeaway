@@ -3,8 +3,9 @@ require 'exceptions'
 
 describe 'OrderAggregator' do
 
-let(:order) { OrderAggregator.new(customer) }
-let(:customer) { double :customer, :order_restaurant => :english_raj, :dishes_to_order => :vindaloo }
+let (:order) { OrderAggregator.new(customer) }
+let (:customer) { double :customer, :order_restaurant => :english_raj, :dishes_to_order => :vindaloo }
+let (:indecisive_customer) { double :customer, :finished_choosing => false}
 
   it "should be able to add up the price of the total order" do 
     expect(order.total_price).to be nil
@@ -27,5 +28,10 @@ let(:customer) { double :customer, :order_restaurant => :english_raj, :dishes_to
     order.what_dishes_to_fulfil(customer)
     expect(order.dishes_to_fulfil).to eq [:vindaloo]
   end
+
+  it "should not process an order unless the customer has finished choosing" do 
+    expect{order.process_order(indecisive_customer)}.to raise_error(CustomerNotFinishedChoosing)
+  end
+
 
 end 
