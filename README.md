@@ -27,6 +27,7 @@ This was the second of our weekend tasks at Makers Academy.  The aim here is to 
 - A centralised "Member" class could be introduced that holds all the restaurants that are signed up on the system.
 - Customer can currently re-enter order with new quantities, rather than supplement their order.  
 - Customer cannot currently delete their order.
+- Informer may look redundant, but adds a layer and I think fits with SOLID principles.  e.g. if we wanted to change how a customer or restaurant might be informed, or add to the ways they are informed.
 
 ###New Technologies
 - This will allow us to begin to use Ruby Gems.

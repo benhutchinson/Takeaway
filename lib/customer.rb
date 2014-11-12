@@ -2,7 +2,7 @@ class Customer
 
   attr_accessor :dishes_to_order
   attr_accessor :finished_choosing
-  attr_accessor :funds_in_account
+  attr_reader :funds_in_account
   attr_accessor :order_restaurant
 
   def initialize(funds)

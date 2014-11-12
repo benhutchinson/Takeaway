@@ -1,7 +1,7 @@
 class Dishes
 
-attr_accessor :name
-attr_accessor :price
+attr_reader :name
+attr_reader :price
 
 def initialize(name, price)
   @name = name
