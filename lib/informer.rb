@@ -1,7 +1,6 @@
 class Informer
 
-  attr_accessor :customer_text_sent
-  attr_accessor :text_count
+  attr_reader :customer_text_sent, :text_count
 
   def initialize
     @customer_text_sent

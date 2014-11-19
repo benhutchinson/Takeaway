@@ -3,9 +3,9 @@ require 'exceptions'
 
 describe 'OrderAggregator' do
 
-let (:order) { OrderAggregator.new(customer) }
-let (:customer) { double :customer, :order_restaurant => :english_raj, :dishes_to_order => :vindaloo }
-let (:indecisive_customer) { double :customer, :finished_choosing => false}
+  let (:order) { OrderAggregator.new(customer) }
+  let (:customer) { double :customer, :order_restaurant => :english_raj, :dishes_to_order => :vindaloo }
+  let (:indecisive_customer) { double :customer, :finished_choosing => false}
 
   it "should be able to add up the price of the total order" do 
     order.price_quantity_array = [100,300]

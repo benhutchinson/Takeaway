@@ -1,8 +1,6 @@
 class Customer
 
-  attr_accessor :dishes_to_order
-  attr_accessor :finished_choosing
-  attr_reader :funds_in_account
+  attr_reader :dishes_to_order, :finished_choosing, :funds_in_account
   attr_accessor :order_restaurant
 
   def initialize(funds)
@@ -19,9 +17,9 @@ class Customer
   end
 
   def choose_dishes(dish, restaurant, quantity = 1)
-    raise PleaseChooseRestaurantFirst if order_restaurant.nil?
+    raise PleaseChooseRestaurantFirst if @order_restaurant.nil?
     raise DishNotOnMenu unless dish.on_the_menu(restaurant, dish)
-    dishes_to_order[dish] = quantity.to_i
+    @dishes_to_order[dish] = quantity
   end
 
   def ready_to_submit_order

@@ -2,7 +2,7 @@ require 'dishes'
 
 describe Dishes do 
 
-let (:vindaloo) { Dishes.new("vindaloo", 10) }
+  let (:vindaloo) { Dishes.new("vindaloo", 10) }
 
   it "should have a price" do 
     expect(vindaloo.price).to eq 10

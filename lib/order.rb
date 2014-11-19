@@ -1,9 +1,7 @@
 class OrderAggregator
 
-  attr_accessor :total_price
-  attr_accessor :price_quantity_array
-  attr_accessor :restaurant
-  attr_accessor :dishes_to_fulfil
+  attr_accessor :total_price, :price_quantity_array
+  attr_reader :restaurant, :dishes_to_fulfil
   
   def initialize(customer)
     @customer = customer
@@ -30,7 +28,7 @@ class OrderAggregator
   end
 
   def create_a_price_quantity_array(customer)
-    @price_quantity_array = customer.dishes_to_order.map { |dish, quantity| dish.price.to_i * quantity.to_i } 
+    @price_quantity_array = customer.dishes_to_order.map { |dish, quantity| dish.price * quantity } 
   end  
 
   def create_the_basket_total(customer)
@@ -38,7 +36,7 @@ class OrderAggregator
   end
 
   def can_customer_afford?(customer)
-    raise InsufficientFunds if total_price.to_i > customer.funds_in_account.to_i
+    raise InsufficientFunds if @total_price > customer.funds_in_account
     true
   end
 
