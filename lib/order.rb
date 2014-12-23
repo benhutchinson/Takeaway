@@ -5,26 +5,20 @@ class OrderAggregator
   
   def initialize(customer)
     @customer = customer
+    @restaurant = customer.order_restaurant
+    @dishes_to_fulfil = customer.dishes_to_order
     @total_price
-    @restaurant
-    @dishes_to_fulfil = []
   end
 
   def process_order(customer)
     raise CustomerNotFinishedChoosing unless customer.finished_choosing
     affordability_check(customer)
-    info_for_restaurant_about_order(customer)
   end
 
   def affordability_check(customer)
     create_a_price_quantity_array(customer)
     create_the_basket_total(customer)
     can_customer_afford?(customer)
-  end
-
-  def info_for_restaurant_about_order(customer)
-    which_restaurant_is_order_for(customer)
-    what_dishes_to_fulfil(customer)
   end
 
   def create_a_price_quantity_array(customer)
@@ -38,14 +32,6 @@ class OrderAggregator
   def can_customer_afford?(customer)
     raise InsufficientFunds if @total_price > customer.funds_in_account
     true
-  end
-
-  def which_restaurant_is_order_for(customer)
-    @restaurant = customer.order_restaurant
-  end
-
-  def what_dishes_to_fulfil(customer)
-    @dishes_to_fulfil << customer.dishes_to_order
   end
 
 end
