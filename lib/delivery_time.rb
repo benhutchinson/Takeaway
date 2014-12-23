@@ -11,7 +11,9 @@ require 'time'
 
   def one_hour_from_now
     hour_plus_one = @current_time.strftime("%H").to_i + 1
-    if hour_plus_one < 10
+    if hour_plus_one == 24
+      "00:"+ @current_time.strftime("%M")
+    elsif hour_plus_one < 10
       "0" + hour_plus_one.to_s + ":" + @current_time.strftime("%M")
     else
       hour_plus_one.to_s + ":" + @current_time.strftime("%M")

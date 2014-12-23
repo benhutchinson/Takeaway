@@ -3,9 +3,9 @@ require 'customer'
 describe 'A Customer' do 
 
   let (:customer) { Customer.new(100000) }
-  let (:vindaloo) { double :dish, :on_the_menu => true}
-  let (:peking_duck) { double :dish, :on_the_menu => false}
-  let (:english_raj) { double :restaurant, :signed_up_to_platform => true, :has_menu? => true}
+  let (:vindaloo) { double :dish}
+  let (:peking_duck) { double :dish}
+  let (:english_raj) { double :restaurant, :signed_up_to_platform => true, :has_menu? => true, :menu => ['vindaloo']}
   let (:fiction_restaurant) { double :restaurant, :signed_up_to_platform => false, :has_menu? => false}
   let (:fiction_restaurant2) { double :restaurant, :signed_up_to_platform => true, :has_menu? => false}
 
@@ -19,8 +19,8 @@ describe 'A Customer' do
     end
 
     it "should be able to choose dishes (default quantity of 1)" do 
-      customer.choose_dishes(vindaloo, english_raj, 2)
-      expect(customer.dishes_to_order[vindaloo]).to be 2
+      customer.choose_dishes('vindaloo', english_raj, 2)
+      expect(customer.dishes_to_order['vindaloo']).to be 2
     end
 
     it "should not be able to choose a dish if the restaurant does not sell it" do 

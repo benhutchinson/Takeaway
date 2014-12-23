@@ -7,8 +7,4 @@ class Dishes
     @price = price
   end
 
-  def on_the_menu(restaurant, dish)
-    restaurant.menu.include?(dish)
-  end
-
 end

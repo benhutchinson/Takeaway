@@ -18,7 +18,7 @@ class Customer
 
   def choose_dishes(dish, restaurant, quantity = 1)
     raise PleaseChooseRestaurantFirst if @order_restaurant.nil?
-    raise DishNotOnMenu unless dish.on_the_menu(restaurant, dish)
+    raise DishNotOnMenu unless restaurant.menu.include? dish
     @dishes_to_order[dish] = quantity
   end
 

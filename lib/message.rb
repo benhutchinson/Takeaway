@@ -1,6 +1,6 @@
 require 'twilio-ruby'
 
-  class TextMessage
+class TextMessage
 
   def initialize
     account_sid = ENV['MY_TWILIO_USER']
@@ -10,9 +10,10 @@ require 'twilio-ruby'
   end
 
   def send_text
-    @message = @client.account.messages.create(:body => "Thank you. Your order was placed and will be delivered before #{@expected_time}",
+    @message = @client.account.messages.create(
+      :body => "Thank you. Your order was placed and will be delivered before #{@expected_time}",
       :from => ENV['MY_TWILIO_NUMBER'],
-      :to => ENV['MY_MOBILE'])
+      :to => ENV['CUSTOMER_MOBILE'])
   end
 
 end
